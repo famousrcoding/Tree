@@ -16,7 +16,7 @@
     // Set canvas dimensions
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-	
+	//Responsive
       var canvas;
       var canvasWidth;
       var ctx;
