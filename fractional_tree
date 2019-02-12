@@ -2,12 +2,89 @@
 <html>
     <head>
         <title>Fractional Tree</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"> 
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="HandheldFriendly" content="true"> 
     </head>
-    <body style="background-color:skyblue;">
+    <body style="background-color:LightSkyBlue;">
 	
-      <canvas id="canvas"></canvas> 
+      <canvas id="mycanvas" width="100%" height="100%"></canvas> 
       <script>
-          </script> 
+ 
+    canvas = document.getElementById('mycanvas');
+ 
+    // Set canvas dimensions
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+	
+      var canvas;
+      var canvasWidth;
+      var ctx;
+ 
+      function init() {
+        canvas = document.getElementById('mycanvas');
+        if (canvas.getContext) {
+          ctx = canvas.getContext("2d");
+ 
+          window.addEventListener('resize', resizeCanvas, false);
+          window.addEventListener('orientationchange', resizeCanvas, false);
+          resizeCanvas();
+        }
+      }
+ 
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+	  
+var       
+
+canvas=document.querySelector("canvas");
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+var ctx=canvas.getContext("2d");
+ctx.strokeStyle = "#4C0D00"; 
+ctx.fillStyle = "green";
+
+
+
+
+function draw(startX, startY, len, angle, branchWidth) { 
+   
+    ctx.lineWidth = branchWidth;
+    ctx.beginPath(); 
+    ctx.save();  
+    ctx.translate(startX, startY); 
+    ctx.rotate(angle * Math.PI/180); 
+    ctx.moveTo(0, 0); 
+    ctx.lineTo(0, -len);     
+    ctx.shadowBlur = 30; 
+    ctx.shadowColor = "rgba(0,0,0,0.8)";
+    ctx.stroke();
+ 
+
+if(len < 9) { 
+    ctx.beginPath(); 
+    ctx.arc(0, -len, 10, 0, Math.PI/2);                 
+    ctx.fill(); 
+    ctx.restore(); 
+    return; 
+}
+ 
+
+draw(0, -len, len*0.8, angle+10, branchWidth*0.8); 
+draw(0, -len, len*0.8, angle-10, branchWidth*0.8); 
+
+
+ctx.restore(); 
+
+}
+
+draw(200,500,75,0,11);  
+//startX, startY, len, angle, branchWidth)          
+          
+          
+      </script> 
 
     </body>
 </html>
