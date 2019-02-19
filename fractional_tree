@@ -6,17 +6,20 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
 <meta name="HandheldFriendly" content="true"> 
     </head>
-    <body style="background-color:LightSkyBlue;">
+    <body style="background-color:#98dafc;">
+        <h2 style="text-align:center;"> <font color="#312c32"><strong>Famous R Coding</strong><br> www.famousrcoding.com</font></h2>
 	
       <canvas id="mycanvas" width="100%" height="100%"></canvas> 
       <script>
- 
+   /*
+   tree
+   */
     canvas = document.getElementById('mycanvas');
  
     // Set canvas dimensions
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-	//Responsive
+	
       var canvas;
       var canvasWidth;
       var ctx;
